@@ -1,0 +1,11 @@
+{
+  "name": "formflow",
+  "version": "1.0.0",
+  "description": "FormFlow for node.js BotBuilder SDK",
+  "main": "formflow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimitris-Ilias Gkanatsios",
+  "license": "ISC"
+}
