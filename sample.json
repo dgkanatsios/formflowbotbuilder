@@ -1,7 +1,6 @@
 [
     {
         "id": "firstname",
-        "order": "1",
         "prompt": "please enter a name",
         "response": "Your name is %s",
         "errorPrompt": "please enter a string of > 0 characters",
@@ -9,7 +8,6 @@
     },
     {
         "id": "language",
-        "order": "2",
         "prompt": "please select a language",
         "response": "Your favorite programming language is %s",
         "errorPrompt": "please select one of the choices",
@@ -18,7 +16,6 @@
     },
     {
         "id": "email",
-        "order": "3",
         "prompt": "please enter an email",
         "response": "Your email is %s",
         "errorPrompt": "please enter a valid email",
@@ -26,7 +23,6 @@
     },
     {
         "id": "url",
-        "order": "2",
         "prompt": "please enter a website (starting with http:// or https://)",
         "response": "Your url is %s",
         "errorPrompt": "please enter a valid website",
