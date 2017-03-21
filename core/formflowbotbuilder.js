@@ -118,7 +118,7 @@ function assignDialogsToBot(bot, matrix) {
 }
 
 
-function initializeFormFlow(file, bot, dialogname) {
+function executeFormFlow(file, bot, dialogname) {
     return new Promise((resolve, reject) => {
         readFile(file).then((data) => {
             let responses = {};
@@ -134,5 +134,7 @@ function initializeFormFlow(file, bot, dialogname) {
     });
 }
 
-module.exports.maxRetriesGlobal = maxRetriesGlobal;
-module.exports.initializeFormFlow = initializeFormFlow;
+module.exports = {
+    maxRetriesGlobal : maxRetriesGlobal,
+    executeFormFlow : executeFormFlow
+};

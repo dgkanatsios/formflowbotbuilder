@@ -6,7 +6,7 @@ const bot = new builder.UniversalBot(connector);
 
 const myDialogName = 'getFields';
 
-formflowbotbuilder.initializeFormFlow('./sample.json', bot, myDialogName).then(function (responses) {
+formflowbotbuilder.executeFormFlow('./sample.json', bot, myDialogName).then(function (responses) {
     bot.dialog('/', [function (session) {
         session.beginDialog(myDialogName);
     },
