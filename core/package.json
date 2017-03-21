@@ -1,6 +1,6 @@
 {
   "name": "formflowbotbuilder",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "FormFlow for Microsoft BotBuilder node.js SDK",
   "main": "formflowbotbuilder.js",
   "author": "Dimitris-Ilias Gkanatsios <dgkanatsios@outlook.com> (http://www.dgkanatsios.com)",
@@ -8,6 +8,10 @@
   "dependencies": {
     "botbuilder": "^3.7.0"
   },
-  "url": "https://github.com/dgkanatsios/formflowbotbuilder",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dgkanatsios/formflowbotbuilder.git"
+  },
+  "url": "https://dgkanatsios.com/2017/03/21/formflow-for-microsoft-node-js-botbuilder-sdk/",
   "email": "dgkanatsios@outlook.com"
 }
