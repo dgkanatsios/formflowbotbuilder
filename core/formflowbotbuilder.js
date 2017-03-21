@@ -118,17 +118,19 @@ function assignDialogsToBot(bot, matrix) {
 }
 
 
-function initializeFormFlow(file, bot, dialogname, callback) {
-    readFile(file).then((data) => {
-        let responses = {};
-        const obj = JSON.parse(data);
-        const promptsResponsesMatrix = createPromptsFromObj(obj, responses);
-        const validatorDialogsMatrix = createValidatorDialogsFromObj(obj);
-        assignDialogsToBot(bot, validatorDialogsMatrix);
-        bot.dialog(dialogname, promptsResponsesMatrix);
-        callback(null, responses);
-    }).catch((error) => {
-        callback(error);
+function initializeFormFlow(file, bot, dialogname) {
+    return new Promise((resolve, reject) => {
+        readFile(file).then((data) => {
+            let responses = {};
+            const obj = JSON.parse(data);
+            const promptsResponsesMatrix = createPromptsFromObj(obj, responses);
+            const validatorDialogsMatrix = createValidatorDialogsFromObj(obj);
+            assignDialogsToBot(bot, validatorDialogsMatrix);
+            bot.dialog(dialogname, promptsResponsesMatrix);
+            return resolve(responses);
+        }).catch((error) => {
+            return reject(error);
+        });
     });
 }
 

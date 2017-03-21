@@ -76,26 +76,16 @@ const bot = new builder.UniversalBot(connector);
 //just a name for the dialog
 const myDialogName = 'getFields';
 
-formflowbotbuilder.initializeFormFlow('./sample.json', bot, myDialogName, function (err, responses) {
-    if (err) {
-        console.log(err);
-        return;
-    }
-    else {
-        bot.dialog('/', [function (session) {
-            session.beginDialog(myDialogName);
-        },
-        function (session, results) {
-            //responses from the user are in results variable as well as in the responses callback argument
-            session.send('results: ' + JSON.stringify(results));
-        }]);
-
-    }
-});
+formflowbotbuilder.initializeFormFlow('./sample.json', bot, myDialogName).then(function (responses) {
+    bot.dialog('/', [function (session) {
+        session.beginDialog(myDialogName);
+    },
+    function (session, results) {
+        //responses from the user are in results variable as well as in the responses callback argument
+        session.send('results: ' + JSON.stringify(results));
+    }]);
+}).catch((error) => console.log(error));
 ```
-
-## API Reference
-
 
 ## License
 
