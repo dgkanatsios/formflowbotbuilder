@@ -1,11 +1,11 @@
 ## Synopsis
 
 FormFlow for Microsoft BotBuilder node.js SDK.
-C# BotBuilder SDK has a nice little thing called [FormFlow](https://docs.botframework.com/en-us/csharp/builder/formflow/) which basically allows you to specify a C# class which, based on its fields, can generate various question/answer pairs to get some results back from the user.
+C# BotBuilder SDK has a cool feature called [FormFlow](https://docs.botframework.com/en-us/csharp/builder/formflow/). This feature allows you to generate a Dialog tree for your chatbot in order to get some responses back from the user.
 
 ## Code Example
 
-You start by specifying a JSON file
+You start by specifying a JSON file that will contain the question/answer series for your chatbot. Pay special attention to the ordering, as this is the exact order that the questions will be asked by the bot.
 
 ```
 [
@@ -48,7 +48,6 @@ You need to specify
 - type: this can be 'text','email','number','url','time','choice'
 - choices: this only work for the 'choice' type, you specify the choices separated by a pipe
 
-
 ## Motivation
 
 The absense of a FormFlow library for the Node.js BotBuilder SDK.
@@ -76,7 +75,7 @@ const bot = new builder.UniversalBot(connector);
 //just a name for the dialog
 const myDialogName = 'getFields';
 
-formflowbotbuilder.initializeFormFlow('./sample.json', bot, myDialogName).then(function (responses) {
+formflowbotbuilder.executeFormFlow('./sample.json', bot, myDialogName).then(function (responses) {
     bot.dialog('/', [function (session) {
         session.beginDialog(myDialogName);
     },
@@ -90,3 +89,7 @@ formflowbotbuilder.initializeFormFlow('./sample.json', bot, myDialogName).then(f
 ## License
 
 MIT
+
+## More info
+
+Check out the blog post [here](https://dgkanatsios.com/2017/03/21/formflow-for-microsoft-node-js-botbuilder-sdk/)
