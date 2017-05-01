@@ -1,6 +1,6 @@
 {
   "name": "formflowbotbuilder",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "FormFlow for Microsoft BotBuilder node.js SDK",
   "main": "formflowbotbuilder.js",
   "author": "Dimitris-Ilias Gkanatsios <dgkanatsios@outlook.com> (http://www.dgkanatsios.com)",
