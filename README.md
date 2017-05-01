@@ -62,7 +62,7 @@ npm install --save botbuilder
 npm install --save formflowbotbuilder
 ```
 
-Create a new sample.json file and insert the necessary steps using the format we described above.
+Create a new sampledata.json file and insert the necessary steps using the format we described above.
 Create a file called app.js
 
 ```
@@ -75,15 +75,19 @@ const bot = new builder.UniversalBot(connector);
 //just a name for the dialog
 const myDialogName = 'getFields';
 
-formflowbotbuilder.executeFormFlow('./sample.json', bot, myDialogName).then(function (responses) {
+formflowbotbuilder.executeFormFlow('./sampledata.json', bot, myDialogName, function (err, responses) {
+  if (err) {
+    console.log(err);
+  } else {
     bot.dialog('/', [function (session) {
-        session.beginDialog(myDialogName);
+      session.beginDialog(myDialogName);
     },
-    function (session, results) {
-        //responses from the user are in results variable as well as in the responses callback argument
-        session.send('results: ' + JSON.stringify(results));
-    }]);
-}).catch((error) => console.log(error));
+      function (session, results) {
+            // responses from the user are in results variable as well as in the responses callback argument
+        session.send('results: ' + JSON.stringify(responses));
+      }]);
+  }
+});
 ```
 
 ## License
