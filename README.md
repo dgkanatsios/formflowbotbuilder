@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-FormFlow for Microsoft BotBuilder node.js SDK.
+FormFlow for Microsoft BotBuilder Node.js SDK.
 C# BotBuilder SDK has a cool feature called [FormFlow](https://docs.botframework.com/en-us/csharp/builder/formflow/). This feature allows you to generate a Dialog tree for your chatbot in order to get some responses back from the user.
 
 ## Code Example
