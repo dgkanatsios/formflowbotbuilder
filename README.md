@@ -1,3 +1,5 @@
+[![unofficial Google Analytics for GitHub](https://gaforgithub.azurewebsites.net/api?repo=FormflowBotBuilder)](https://github.com/dgkanatsios/gaforgithub)
+
 ## Synopsis
 
 FormFlow for Microsoft BotBuilder node.js SDK.
